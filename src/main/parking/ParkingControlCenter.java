@@ -27,4 +27,5 @@ public class ParkingControlCenter {
             slots.add(new Slot(i + 1, slotSize));
         return slots;
     }
+
 }
