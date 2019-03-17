@@ -5,6 +5,9 @@ import main.parking.enums.Size;
 public class Slot {
 
     private int slotId;
+
+    // TODO: 2019-03-17 can be used when closest possible slot needs to be
+    //  provided. In current scope this is not used
     private boolean isOccupied = false;
     private Size slotSize;
 
