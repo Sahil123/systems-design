@@ -6,45 +6,54 @@ Design and implement a parking system. What data structures,
 interfaces and algorithms will you need? Your parking system should
 be able to handle vehicles such as motorcycle,car and bus.
 
+
+## IParkingCenter
+
+The IParkingCenter interface is entry point for Parking Center Application.
+It provides `park`, `unPark` and `valetPark` functions respectively.
+
+For different designs please implement this interface.
+
 ## Design 1
 
-The elevator control system has two classes, an `Elevator` and an `ElevatorControlSystem`
+- The parking center has three type of slots `SMALL`, `MEDIUM` and `LARGE`
+- The design supports three type of vehicles `MOTORCYCLE`, `CAR` and `BUS`
+- `MOTORCYCLE` vehicle can occupy `SMALL`, `MEDIUM` or `LARGE` slots
+- `CAR` vehicle can occupy `MEDIUM` or `LARGE` slots
+- `BUS` vehicle can occupy `LARGE` slot
 
-### ElevatorControlSystem
 
-The Elevator control system manages all of the elevators and process the next tick of the system.  It is responsible for
-handling pickup requests which come from people outside of the elevator and destination requests which come from users
-inside the elevator
+### ParkingCenterSizeWiseImpl
 
-### Elevator
+The ParkingCenterSizeWiseImpl manages the logic for allotment of slot for the given vehicle.
+It supports parking or valet parking of the vehicle.
+Further it also supports freeing the slot post vehicle removal.
 
-The Elevator manages which floor it's on, which floors it needs to go to, the status, and the direction of the elevator.
 
-__ElevatorDirection__ - An elevator can be going in one of three directions
+### Slot Size and Vehicle Type
+ 
+__Size__ - A slot can have one of the three sizes
 ```java
-public enum ElevatorDirection {
-  ELEVATOR_UP,      // Elevator is going up
-  ELEVATOR_DOWN,    // Elevator is going down
-  ELEVATOR_HOLD     // Elevator is being held
+public enum Size {
+    SMALL,
+    MEDIUM,
+    LARGE
 }
 ```
 
-__ElevatorStatus__ - Each elevator has one of two status
+__Vehicle Type__ - A vehicle can have one of following types
 ```java
-public enum ElevatorStatus {
-  ELEVATOR_OCCUPIED,  // Elevator is occupied by users inside who are request floors
-  ELEVATOR_EMPTY      // Elevator is empty and can be used to request a pickup
+public enum VehicleType {
+    MOTORCYCLE,
+    CAR,
+    BUS
 }
 ```
 
 ## Things to improve
 
-- [ ] Improve algorithm for finding near elevators
-- [ ] Queue that controls the destination floors could be converted into a better data structure
-  - [ ] Sorted Insert List
-- [ ] Handle Hold cases
-  - [ ] Check timer here to alert users that they are holding the door open to long
-  - [ ] Emergency situation where elevator can't be used
-  - [ ] Maintenance Mode e.g. movers or maintenance people
-- [ ] Added lowest and highest floors to elevators. Not all elevators in a building go to the same level
-- [ ] Better error and exception handling
+- [ ] Add a feature of allotting closest available possible slot. 
+- [ ] Make design real world application 
+  - [ ] Create singleton instance of Parking Center implementation so only one instance is created
+  - [ ] Parking Center should be able to handle concurrent requests
+- [ ] Valet Parking needs to be supported  
