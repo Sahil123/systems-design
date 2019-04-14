@@ -1,4 +1,4 @@
-package main.parking;
+package main.parking.services;
 
 import main.parking.entity.Vehicle;
 

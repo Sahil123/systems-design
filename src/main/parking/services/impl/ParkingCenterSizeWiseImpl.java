@@ -1,6 +1,6 @@
-package main.parking.impl;
+package main.parking.services.impl;
 
-import main.parking.IParkingCenter;
+import main.parking.services.IParkingCenter;
 import main.parking.entity.Slot;
 import main.parking.entity.Vehicle;
 import main.parking.enums.Size;

@@ -1,9 +1,9 @@
 package test.parking;
 
-import main.parking.IParkingCenter;
+import main.parking.services.IParkingCenter;
 import main.parking.entity.Vehicle;
 import main.parking.enums.VehicleType;
-import main.parking.impl.ParkingCenterSizeWiseImpl;
+import main.parking.services.impl.ParkingCenterSizeWiseImpl;
 import org.junit.Before;
 import org.junit.Test;
 
