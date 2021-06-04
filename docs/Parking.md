@@ -14,7 +14,7 @@ It provides `park`, `unPark` and `valetPark` functions respectively.
 
 For different designs please implement this interface.
 
-## Design 1
+## Design
 
 - The parking center has three type of slots `SMALL`, `MEDIUM` and `LARGE`
 - The design supports three type of vehicles `MOTORCYCLE`, `CAR` and `BUS`
